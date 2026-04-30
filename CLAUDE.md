@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the **org-level `.github` repo** for the `decdn` GitHub organization (`git@github.com:decdn/.github.git`). It is GitHub's special "community health" repo: files placed here become **defaults for every repo in the `decdn` org that does not ship its own equivalent**.
 
-Currently empty (no commits). Anything added here has org-wide blast radius — changes affect `decdn/decdn`, `decdn/finance`, `decdn/website`, and any future repos. Treat additions accordingly.
+Currently contains only `profile/README.md` (the org-page README) and this file. Anything added has org-wide blast radius — changes affect `decdn/decdn`, `decdn/finance`, `decdn/website`, `decdn/internal`, and any future repos. Treat additions accordingly.
 
 ## What belongs here vs. elsewhere
 
