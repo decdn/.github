@@ -2,13 +2,12 @@
 
 A decentralized CDN where nodes stake, cache content-addressed blobs, and earn per-MB payments over off-chain USDC channels. Built in Rust on [iroh](https://github.com/n0-computer/iroh) QUIC.
 
-> **Status: early / pre-launch.** Running toward a PoC on Arbitrum Sepolia. APIs, wire formats, and economics are still in flux — the [ADRs](https://github.com/decdn/decdn/tree/main/adr) are the source of truth for current thinking.
+> **Status: early / pre-launch.** Running toward a PoC on an L2. APIs, wire formats, and economics are still in flux — the [ADRs](https://github.com/decdn/decdn/tree/main/adr) are the source of truth for current thinking.
 
 ## The repos
 
-- **[decdn/decdn](https://github.com/decdn/decdn)** — core Rust monorepo. Cargo workspace with `protocol`, `cache`, `gossip`, `node`, `incentive`, and `reputation` crates, plus the Solidity contracts. Most work happens here.
-- **[decdn/website](https://github.com/decdn/website)** — Next.js landing page. Pre-launch; not yet deployed.
-- **[decdn/finance](https://github.com/decdn/finance)** — Jupyter notebooks modeling node economics, bootstrap runway, channel economics, and token flows. Parameters sourced from ADRs 003, 004, and 018.
+- **[decdn/decdn](https://github.com/decdn/decdn)** — core Rust monorepo. Cargo workspace with `protocol`, `cache`, `gossip`, `node`, `incentive`, and `reputation` crates, plus the Solidity contracts. Most work happens here. (Not public yet, still cooking)
+- **[decdn/website](https://github.com/decdn/website)** — Next.js landing page.
 
 ## For developers
 
