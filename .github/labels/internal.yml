@@ -1,0 +1,14 @@
+# Overlay for decdn/internal (private fundraising/strategy/legal/branding docs).
+# Merged on top of _core.yml.
+- name: marketing
+  color: 'aaaaaa'
+  description: Marketing or growth content
+- name: branding
+  color: 'e99695'
+  description: Brand assets or guidelines
+- name: legal
+  color: '0052cc'
+  description: Legal review or compliance
+- name: fundraising
+  color: 'b08800'
+  description: Investor materials or pitch

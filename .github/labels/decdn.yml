@@ -1,0 +1,53 @@
+# Overlay for decdn/decdn (Rust core, ADRs, contracts).
+# Merged on top of _core.yml.
+- name: adr-review
+  color: '0e8a16'
+  description: ADR needs review
+- name: ADR
+  color: 'ededed'
+  description: ADR-related issue or change
+- name: missing-decision
+  color: 'f9d0c4'
+  description: Decision not yet recorded in ADR
+- name: consistency
+  color: 'fbca04'
+  description: Consistency issue across ADRs or design
+- name: scope
+  color: 'c5def5'
+  description: Scope definition or boundary issue
+- name: architecture
+  color: 'ededed'
+  description: Architecture or system-design concern
+- name: economics
+  color: '1d76db'
+  description: Token economics or payment design
+- name: technical
+  color: '5319e7'
+  description: Technical design or implementation
+- name: critical
+  color: 'b60205'
+  description: Critical priority issue
+- name: high
+  color: 'ededed'
+  description: High priority issue
+- name: medium
+  color: 'ededed'
+  description: Medium priority issue
+- name: rust
+  color: '000000'
+  description: Pull requests that update rust code
+- name: cli
+  color: '0e8a16'
+  description: Command-line interface
+- name: testing
+  color: '4af5c8'
+  description: Test-related issues
+- name: github_actions
+  color: '000000'
+  description: Pull requests that update GitHub Actions code
+- name: poc-blocking
+  color: 'a6fb4d'
+  description: Implementations required for PoC/Demo
+- name: prod-blocking
+  color: '1b3997'
+  description: Implementations that are deferred to post-PoC

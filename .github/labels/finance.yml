@@ -1,0 +1,11 @@
+# Overlay for decdn/finance (Python economic-model notebooks).
+# Merged on top of _core.yml.
+- name: economics
+  color: '1d76db'
+  description: Token economics or payment design
+- name: notebooks
+  color: 'f37726'
+  description: Jupyter notebook content or behavior
+- name: parameters
+  color: '6f42c1'
+  description: Economic model parameter (params.py) updates
