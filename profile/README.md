@@ -2,15 +2,16 @@
 
 A decentralized CDN where nodes bond stake, cache content-addressed blobs, and earn per-MB USDC payments through off-chain vouchers backed by a shared on-chain pool ([ADR 003](https://github.com/decdn/decdn/blob/main/adr/003-payments.md)). Built in Rust on [iroh](https://github.com/n0-computer/iroh) QUIC. Open source under MIT OR Apache-2.0.
 
-> **Status: early / pre-launch.** Running toward a PoC on an L2. No tagged release yet, and APIs, wire formats, and economics are still in flux. The [ADRs](https://github.com/decdn/decdn/tree/main/adr) are the source of truth for current thinking.
+> **Status: early / pre-launch.** A test network runs on Arbitrum Sepolia; production targets Arbitrum One. No tagged release yet, and APIs, wire formats, and economics are still in flux. The [ADRs](https://github.com/decdn/decdn/tree/main/adr) are the source of truth for current thinking.
 
 ## The repos
 
 - **[decdn/decdn](https://github.com/decdn/decdn)**: the core Rust monorepo. A Cargo workspace with the `decdn-node` daemon and `decdn` CLI, plus crates for the protocol, cache, client, incentive, and reputation layers. It also holds the Solidity contracts and the ADRs behind the design. Most work happens here.
-- **[decdn/devops](https://github.com/decdn/devops)**: the official DevOps repo for deploying a deCDN node.
-- **[decdn/sponsor](https://github.com/decdn/sponsor)**: sponsored testnet on-ramp. A captcha-gated gateway grants new clients a spending allowance so they can fetch paid content without setting up a wallet first.
-- **[decdn/stats](https://github.com/decdn/stats)**: network status dashboard built from on-chain settlement data.
-- **[decdn/website](https://github.com/decdn/website)**: Next.js landing page, live at [decdn.org](https://decdn.org).
+- **[decdn/devops](https://github.com/decdn/devops)**: deploy and operate a deCDN node with Ansible, cloud-init, Docker Compose, or a Helm chart. Hardened and localhost-only by default.
+- **[decdn/sponsord](https://github.com/decdn/sponsord)**: sponsored downloads. A publisher funds a USDC payment pool, and their users download through a one-line installer and a captcha, with no wallet, keys, or tokens to manage.
+- **[decdn/stats](https://github.com/decdn/stats)**: network status dashboard read from on-chain state on Arbitrum Sepolia, live at [stats.decdn.org](https://stats.decdn.org).
+- **[decdn/website](https://github.com/decdn/website)**: Next.js landing page, live at [decdn.org](https://decdn.org). Also holds the source for [docs.decdn.org](https://docs.decdn.org).
+- **[decdn/iroh-tests](https://github.com/decdn/iroh-tests)**: reproductions for issues found in iroh, iroh-blobs, noq, and bao-tree while building deCDN, with the workaround each one needed.
 
 ## For developers
 
