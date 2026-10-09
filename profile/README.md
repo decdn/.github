@@ -1,5 +1,7 @@
 # deCDN
 
+**[Website](https://decdn.org)** · **[Docs](https://docs.decdn.org)** · **[Network stats](https://stats.decdn.org)**
+
 A decentralized CDN where nodes bond stake, cache content-addressed blobs, and earn per-MB USDC payments through off-chain vouchers backed by a shared on-chain pool ([ADR 003](https://github.com/decdn/decdn/blob/main/adr/003-payments.md)). Built in Rust on [iroh](https://github.com/n0-computer/iroh) QUIC. Open source under MIT OR Apache-2.0.
 
 > **Status: public testnet.** The network runs on Arbitrum Sepolia; production targets Arbitrum One. Signed binaries, crates, and container images for both the `decdn-node` daemon and the `decdn` CLI ship with each [release](https://github.com/decdn/decdn/releases/latest), starting with v0.0.1. Wire, ABI, config, and storage formats change without compatibility shims until mainnet, and many ADRs are still Draft. The [ADRs](https://github.com/decdn/decdn/tree/main/adr) are the source of truth for current thinking.
