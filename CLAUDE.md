@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the **org-level `.github` repo** for the `decdn` GitHub organization (`git@github.com:decdn/.github.git`). It is GitHub's special "community health" repo: files placed here become **defaults for every repo in the `decdn` org that does not ship its own equivalent**.
 
-Currently contains `profile/README.md` (the org-page README), `CODE_OF_CONDUCT.md` (the org-wide default code of conduct), and this file. Anything added has org-wide blast radius — changes affect `decdn/decdn`, `decdn/finance`, `decdn/website`, `decdn/internal`, and any future repos. Treat additions accordingly.
+Currently contains `profile/README.md` (the org-page README), `CODE_OF_CONDUCT.md` (the org-wide default code of conduct), and this file. Anything added has org-wide blast radius — it applies to every repo in the org that lacks its own copy, public and private, active and archived (`gh repo list decdn` for the current set). Treat additions accordingly.
 
 ## What belongs here vs. elsewhere
 
@@ -17,10 +17,10 @@ Currently contains `profile/README.md` (the org-page README), `CODE_OF_CONDUCT.m
 | `.github/ISSUE_TEMPLATE/`, `.github/PULL_REQUEST_TEMPLATE.md` | Default issue/PR templates for repos without their own. |
 | `workflow-templates/` | Starter workflows offered to org members in the Actions UI (these are *templates*, not workflows that run). |
 
-**Does not belong here:** repo-specific CI workflows, repo-specific docs, code. Those live in the per-repo `.github/` directory inside `decdn/`, `finance/`, or `website/`.
+**Does not belong here:** repo-specific CI workflows, repo-specific docs, code. Those live in the owning repo's own `.github/` directory.
 
 ## Before adding anything
 
-1. Check whether the per-repo `.github/` directory in `decdn/`, `finance/`, or `website/` already provides the file — a repo-local copy overrides this org-level default and may be intentional.
-2. Confirm the change is appropriate for *all three* (and any future) org repos. If it's only right for one, it belongs in that repo, not here.
+1. Check whether a repo's own `.github/` directory (or root) already provides the file — a repo-local copy overrides this org-level default and may be intentional.
+2. Confirm the change is appropriate for *every* org repo, including private and future ones. If it's only right for one, it belongs in that repo, not here.
 3. The parent workspace `CLAUDE.md` at `/home/thiras/dev/decdn/CLAUDE.md` is the entry point for understanding the org's repos and their cross-dependencies.
