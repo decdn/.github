@@ -1,0 +1,11 @@
+# Overlay for decdn/website (Next.js marketing site).
+# Merged on top of _core.yml.
+- name: javascript
+  color: '168700'
+  description: Pull requests that update javascript code
+- name: seo
+  color: 'ededed'
+  description: Search-engine optimization concern
+- name: design
+  color: 'aaaaaa'
+  description: Visual or UX design change

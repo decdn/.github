@@ -1,0 +1,69 @@
+name: Sync issue labels
+
+# Composes .github/labels/_core.yml with each per-repo overlay and pushes
+# the merged label set to the corresponding repo via EndBug/label-sync.
+#
+# Auth: needs LABEL_SYNC_TOKEN repo secret with `issues:write` + `metadata:read`
+# on all five target repos (GITHUB_TOKEN is scoped to this repo only and cannot
+# mutate labels elsewhere).
+#
+# Rollout: `delete-other-labels: false` for the additive first run. Flip to
+# true in a follow-up PR once orphan labels have been reviewed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/labels/**'
+      - '.github/workflows/sync-labels.yml'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - decdn
+          - website
+          - finance
+          - internal
+          - '.github'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        run: |
+          sudo wget -qO /usr/local/bin/yq \
+            https://github.com/mikefarah/yq/releases/download/v4.52.4/yq_linux_amd64
+          sudo chmod +x /usr/local/bin/yq
+          yq --version
+
+      - name: Compose manifest
+        env:
+          REPO_SLUG: ${{ matrix.repo }}
+        run: |
+          set -euo pipefail
+          overlay_name="${REPO_SLUG/./dot}"   # .github -> dotgithub
+          overlay_file=".github/labels/${overlay_name}.yml"
+          if [ ! -f "$overlay_file" ]; then
+            echo "Overlay missing: $overlay_file" >&2
+            exit 1
+          fi
+          yq eval-all '. as $item ireduce ([]; . + $item)' \
+            .github/labels/_core.yml "$overlay_file" > /tmp/labels.yml
+          count=$(yq eval 'length' /tmp/labels.yml)
+          echo "Composed manifest for decdn/${REPO_SLUG} (${count} labels):"
+          yq eval '.[] | .name' /tmp/labels.yml | sort
+
+      - name: Sync labels
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: /tmp/labels.yml
+          repository: decdn/${{ matrix.repo }}
+          delete-other-labels: false
+          token: ${{ secrets.LABEL_SYNC_TOKEN }}
