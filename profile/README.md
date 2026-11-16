@@ -9,8 +9,8 @@ A decentralized CDN: nodes bond stake, cache content-addressed blobs, and earn p
 ## Repos
 
 - **[decdn](https://github.com/decdn/decdn)**: the core monorepo. Node daemon, `decdn` CLI, client SDK, sponsorship daemon, Solidity contracts, and the [ADRs](https://github.com/decdn/decdn/tree/main/adr) behind the design. Most work happens here.
-- **[sdk-typescript](https://github.com/decdn/sdk-typescript)** and **[sdk-python](https://github.com/decdn/sdk-python)**: clients for Node.js, browsers, and Python that talk to a `decdn gateway`.
-- **[android-demo](https://github.com/decdn/android-demo)**, **[ios-demo](https://github.com/decdn/ios-demo)**, and **[browser-demo](https://github.com/decdn/browser-demo)**: demo apps that download and verify content from a sponsored pool.
+- **[sdk-typescript](https://github.com/decdn/sdk-typescript)** and **[sdk-python](https://github.com/decdn/sdk-python)**: clients for Node.js, browsers, and Python that talk to a `decdn gateway` ([`@decdn/client`](https://www.npmjs.com/package/@decdn/client) on npm, [`decdn`](https://pypi.org/project/decdn/) on PyPI).
+- **[android-demo](https://github.com/decdn/android-demo)** and **[ios-demo](https://github.com/decdn/ios-demo)**: demo apps that download and verify content from a sponsored pool.
 - **[devops](https://github.com/decdn/devops)**: deploy and run a node with Docker Compose, Ansible, cloud-init, or Helm.
 - **[stats](https://github.com/decdn/stats)**: the network dashboard at [stats.decdn.org](https://stats.decdn.org).
 - **[website](https://github.com/decdn/website)**: [decdn.org](https://decdn.org), the blog, and [docs.decdn.org](https://docs.decdn.org).
